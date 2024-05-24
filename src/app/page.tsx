@@ -10,9 +10,9 @@ const Page = () => {
   return (
   <>
     <Header />
-    <AuroraBackgroundDemo />;
-    <VortexDemo />;
-    <MeteorsDemo />;
+    <AuroraBackgroundDemo />
+    <VortexDemo />
+    <MeteorsDemo />
   </>
   ) 
 };
