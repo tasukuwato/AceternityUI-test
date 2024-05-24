@@ -1,69 +1,47 @@
-"use client";
+import React from "react";
+import { Meteors } from "@components/ui/meteor";
 
-import { useState } from "react";
-
-const Home = () => {
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState<{ text: string; completed: boolean }[]>([]);
-
-  const addTask = () => {
-    if (task.trim() === "") return;
-    setTasks([...tasks, { text: task, completed: false }]);
-    setTask("");
-  };
-
-  const toggleTask = (index: number) => {
-    const newTasks = tasks.map((t, i) => 
-      i === index ? { ...t, completed: !t.completed } : t
-    );
-    setTasks(newTasks);
-  };
-
-  const deleteTask = (index: number) => {
-    const newTasks = tasks.filter((_, i) => i !== index);
-    setTasks(newTasks);
-  };
-
+export function MeteorsDemo() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 className="text-2xl mb-4">ToDo List</h1>
-        <div className="mb-4">
-          <input
-            type="text"
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
-            className="border p-2 rounded w-full"
-            placeholder="Enter your task"
-          />
-          <button
-            onClick={addTask}
-            className="mt-2 bg-blue-500 text-white p-2 rounded w-full"
-          >
-            Add Task
+    <div className="">
+      <div className=" w-full relative max-w-xs">
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
+        <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+          <div className="h-5 w-5 rounded-full border flex items-center justify-center mb-4 border-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="h-2 w-2 text-gray-300"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
+              />
+            </svg>
+          </div>
+
+          <h1 className="font-bold text-xl text-white mb-4 relative z-50">
+            Meteors because they&apos;re cool
+          </h1>
+
+          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
+            I don&apos;t know what to write so I&apos;ll just paste something
+            cool here. One more sentence because lorem ipsum is just
+            unacceptable. Won&apos;t ChatGPT the shit out of this.
+          </p>
+
+          <button className="border px-4 py-1 rounded-lg  border-gray-500 text-gray-300">
+            Explore
           </button>
+
+          {/* Meaty part - Meteor effect */}
+          <Meteors number={20} />
         </div>
-        <ul>
-          {tasks.map((t, index) => (
-            <li key={index} className="flex items-center justify-between p-2 border-b">
-              <span
-                className={`flex-1 ${t.completed ? "line-through" : ""}`}
-                onClick={() => toggleTask(index)}
-              >
-                {t.text}
-              </span>
-              <button
-                onClick={() => deleteTask(index)}
-                className="ml-4 bg-red-500 text-white p-2 rounded"
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
-};
-
-export default Home;
+}
