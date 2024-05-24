@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Meteors } from "@components/ui/meteor";
+import { Meteors } from "../components/ui/meteor";
 
 export function MeteorsDemo() {
   return (
@@ -25,17 +27,15 @@ export function MeteorsDemo() {
           </div>
 
           <h1 className="font-bold text-xl text-white mb-4 relative z-50">
-            Meteors because they&apos;re cool
+            Overview
           </h1>
 
           <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            I don&apos;t know what to write so I&apos;ll just paste something
-            cool here. One more sentence because lorem ipsum is just
-            unacceptable. Won&apos;t ChatGPT the shit out of this.
+          a short description of a subject or situation that gives the main ideas without explaining all the details
           </p>
 
           <button className="border px-4 py-1 rounded-lg  border-gray-500 text-gray-300">
-            Explore
+            Button
           </button>
 
           {/* Meaty part - Meteor effect */}
@@ -45,3 +45,5 @@ export function MeteorsDemo() {
     </div>
   );
 }
+
+export default MeteorsDemo;
