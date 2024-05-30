@@ -7,6 +7,7 @@ import { MeteorsDemo } from "@/components/ui/meteor";
 import { AuroraBackgroundDemo } from "@/components/ui/aurora-bg";
 import { VortexDemo } from "@/components/ui/vortex";
 import { BentoGridDemo } from "@/components/ui/bento-grid"
+import { ParallaxScrollDemo } from "@/components/ui/parallax-scroll";
 
 
 const Page = () => {
@@ -17,6 +18,7 @@ const Page = () => {
     <VortexDemo />
     <MeteorsDemo />
     <BentoGridDemo />
+    <ParallaxScrollDemo />
   </>
   ) 
 };
